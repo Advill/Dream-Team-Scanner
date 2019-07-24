@@ -18,7 +18,9 @@ async function scrapeReceipt(image) {
 }
 
 async function parseText(textarr) {
-  console.log(await textarr)
+  textarr.then(function (array) {
+    array.forEach(val => console.log(val));
+  });
 }
 
 var textarr = scrapeReceipt('./examples/receipt.jpg');
