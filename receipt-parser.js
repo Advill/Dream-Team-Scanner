@@ -36,7 +36,6 @@ function parseText(textarr) {
 async function parseReceipt(image) {
   var textarr = await scrapeReceipt(image);
   var attribs = await parseText(textarr);
-  console.log(attribs);
   return attribs;
 }
 
