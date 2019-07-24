@@ -7,7 +7,14 @@ async function scrapeReceipt(image) {
 
   // Performs label detection on the image file
   const [result] = await client.textDetection(image);
-  return result.textAnnotations;
+  const annotations = result.textAnnotations;
+  var arr = [];
+  annotations.forEach(function(annotation) {
+    if(annotation.description.length > 2 && annotation.description.length <= 20) {
+      arr.push(annotation.description)
+    }
+  });
+  return arr;
 }
 
 async function parseText(textarr) {
