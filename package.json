@@ -1,0 +1,27 @@
+{
+  "name": "the-dream-team-repo",
+  "version": "1.0.0",
+  "description": "Repository for swift 2019 hackathon project",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/advill/the-dream-team-repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/advill/the-dream-team-repo/issues"
+  },
+  "homepage": "https://github.com/advill/the-dream-team-repo#readme"
+}
