@@ -1,4 +1,4 @@
-async function quickstart() {
+async function scrapeReceipt() {
   // Imports the Google Cloud client library
   const vision = require('@google-cloud/vision');
 
@@ -7,9 +7,17 @@ async function quickstart() {
 
   // Performs label detection on the image file
   const [result] = await client.textDetection('../the-dream-team-repo/receipt.jpg');
-  const detections = result.textAnnotations;
-  console.log('Text::');
-  detections.forEach(text => console.log(text.description));
+  return result.textAnnotations;
 }
 
-quickstart();
+function isTotal(element) {
+  return new String("total").equalsEgnoreCase(element);
+}
+
+
+async function parseText(textarr) {
+
+  
+}
+
+
