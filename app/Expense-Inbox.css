@@ -1,0 +1,37 @@
+.u-section-1 .u-sheet-1 {min-height: 611px}
+.u-section-1 .u-line-1 {height: 466px; transform-origin: center top 0; left: auto; top: 100px; position: absolute; width: 3px; right: 539px}
+.u-section-1 .u-text-1 {width: 399px; margin: 22px auto 0}
+.u-section-1 .u-icon-1 {height: 140px; width: 140px; margin: 34px auto 0 209px}
+.u-section-1 .u-icon-2 {height: 143px; width: 143px; margin: -136px 181px 0 auto}
+.u-section-1 .u-image-1 {width: 584px; height: 139px; margin: 91px auto 0 7px}
+.u-section-1 .u-image-2 {width: 569px; height: 117px; margin: -139px auto 160px 619px} 
+
+@media (max-width: 1199px){ .u-section-1 .u-sheet-1 {min-height: 504px}
+.u-section-1 .u-line-1 {transform: rotate(359deg); right: 444px; width: 2px}
+.u-section-1 .u-text-1 {margin-top: -2px; width: 329px}
+.u-section-1 .u-icon-1 {margin-left: 172px}
+.u-section-1 .u-icon-2 {margin-right: 149px}
+.u-section-1 .u-image-1 {width: 482px; height: 114px; margin-left: 6px}
+.u-section-1 .u-image-2 {width: 429px; height: 97px; margin-top: -118px; margin-left: 511px} }
+
+@media (max-width: 991px){ .u-section-1 .u-sheet-1 {min-height: 386px}
+.u-section-1 .u-line-1 {right: 340px}
+.u-section-1 .u-text-1 {width: 252px}
+.u-section-1 .u-icon-1 {margin-left: 132px}
+.u-section-1 .u-icon-2 {margin-right: 119px}
+.u-section-1 .u-image-1 {width: 369px; height: 88px; margin-left: 5px}
+.u-section-1 .u-image-2 {width: 354px; height: 74px; margin-top: -89px; margin-bottom: 153px; margin-left: 397px} }
+
+@media (max-width: 767px){ .u-section-1 .u-sheet-1 {min-height: 356px}
+.u-section-1 .u-line-1 {right: 255px}
+.u-section-1 .u-text-1 {width: 236px}
+.u-section-1 .u-icon-1 {margin-left: 99px}
+.u-section-1 .u-icon-2 {margin-right: 89px}
+.u-section-1 .u-image-1 {width: 346px; height: 82px; margin-left: 4px}
+.u-section-1 .u-image-2 {width: 247px; height: 70px; margin-top: -91px; margin-left: 293px} }
+
+@media (max-width: 575px){ .u-section-1 .u-line-1 {right: 161px}
+.u-section-1 .u-icon-1 {margin-left: 62px}
+.u-section-1 .u-icon-2 {margin-right: 56px}
+.u-section-1 .u-image-1 {width: 338px; margin-left: 2px}
+.u-section-1 .u-image-2 {width: 155px; margin-left: 185px} }
