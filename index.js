@@ -3,23 +3,22 @@ const express = require('express');
 const app = express();
 
 app.get('/', function(req, res) {
-  val = parse()
-  res.status(200).send('attribs');
+  parse().then(function(attribs) {
+    console.log(attribs);
+    res.status(200).json(attribs);
+  });
 });
 
 if (module === require.main) {
-  // [START server]
-  const server = app.listen(process.env.PORT || 8080, () =>
-    const port = server.aaddress().port;
+  const server = app.listen(process.env.PORT || 8080, () => {
+    const port = server.address().port;
     console.log('App listening on port ${port}');
-  );
+  });
 }
 
 module.exports = app;
 
-function parse() {
-  parser.parseReceipt('./examples/receipt.jpg').then(function(attribs) {
-    console.log(attribs);
-  });
+async function parse() {
+  return parser.parseReceipt('./examples/receipt.jpg');
 }
 
