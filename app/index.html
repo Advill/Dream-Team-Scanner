@@ -106,9 +106,8 @@
                 </div>
             </div>
             <div style="text-align: center">
-              <form id="formid" action="form.php" method="POST" enctype="multipart/form-data">
-                <input id='fileid' type='file' name='filename' hidden/>
-                <input id='buttonid' type='button' value='Upload Receipt' />
+              <form id="formid" action="/upload" method="POST" enctype="multipart/form-data">
+                <input id='fileid' type='file' name='Image'/>
                 <input type='submit' value='Submit' />
               </form>
         </div>
@@ -131,13 +130,9 @@
 
   <script>
     function setup() {
-      document.getElementById('buttonid').addEventListener('click', openDialog);
-      function openDialog() {
-        document.getElementById('fileid').click();
-      }
       document.getElementById('fileid').addEventListener('change', submitForm);
       function submitForm() {
-        document.getElementById('formid').submit();
+        dodcument.getElementByID('formid').submit();
       }
     }
   </script>
