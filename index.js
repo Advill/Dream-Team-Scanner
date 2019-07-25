@@ -5,15 +5,17 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
 app.get('/', function(req, res) {
-  parse().then(function(attribs) {
+  parse('./examples/receipt.jpg').then(function(attribs) {
     console.log(attribs);
     res.status(200).json(attribs);
-  });
+  }).catch(err => res.status(418).send("busted"));
 });
 
 app.post('/upload', upload.single('Image'), function (req, res, next) {
   console.log(req.file.path);
-  res.status(200).json({test: "ok"});
+  parse(req.file.path).then(function(attribs) {
+    res.status(200).json(attribs);
+  }).catch(err => res.status(418).send("busted"));
 });
 
 if (module === require.main) {
@@ -25,7 +27,7 @@ if (module === require.main) {
 
 module.exports = app;
 
-async function parse() {
-  return parser.parseReceipt('./examples/receipt.jpg');
+async function parse(imgPath) {
+  return parser.parseReceipt(imgPath);
 }
 
