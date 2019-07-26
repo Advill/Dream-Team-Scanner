@@ -2,6 +2,8 @@
  * Pretty much taken directly off of their website except for the splitting of
  * the array annotations into each description.
  */
+const moment = require('moment');
+
 async function scrapeReceipt(image) {
   // Imports the Google Cloud client library
   const vision = require('@google-cloud/vision');
@@ -21,15 +23,29 @@ async function scrapeReceipt(image) {
   return arr;
 }
 function isDate(value) {
-  const moment = require('moment');
+  var bool = false;
+  try {
+    bool =  moment(value).isValid();
+  } catch (err) {
+    console.log(err);
+  } finally {
+    return bool;
+  }
 }
 
 // Parse text for date, total, and vendor. This is done fairly manualy right now
 function parseText(textarr) {
   attributes = {} //date, total, vendor
   attributes.total = textarr[textarr.indexOf('TOTAL') + 1];
-  attributes.date = 'asdf';
   attributes.vendor = textarr[1]; //TODO: actually figure out what the vendor is
+
+  var date = textarr.find(isDate);
+  if(typeof date !== 'undefined') {
+    attributes.date = moment(date).format("DD/MM/YY");
+  } else {
+    attributes.date = moment().format("DD/MM/YY");
+  }
+
   return attributes;
 }
 
