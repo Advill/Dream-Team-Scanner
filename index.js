@@ -3,10 +3,14 @@ const express = require('express');
 const app = express();
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
+const handlebars = require('express-handlebars');
+
+app.engine('handlebars', handlebars());
+app.set('view engine', 'handlebars');
+app.set('views', __dirname + '/views');
 
 // Route to index
 app.get('/', function(req, res) {
-  console.log('request received!');
   res.redirect('/index.html');
 });
 
@@ -15,15 +19,17 @@ app.get('/test', function(req, res) {
   parse('./examples/receipt.jpg').then(function(attribs) {
     console.log(attribs);
     res.status(200).json(attribs);
-  }).catch(err => res.status(418).send("busted"));
+  }).catch(err => res.status(418).
+    send("Something went wrong! contact your local guy who wrote this"));
 });
 
 // upload image through post request
 app.post('/upload', upload.single('Image'), function (req, res, next) {
   console.log('Image received! file:' + req.file.path);
   parse(req.file.path).then(function(attribs) {
-    res.status(200).json(attribs);
-  }).catch(err => res.status(418).send("busted"));
+    res.status(200).render("response", attribs);
+  }).catch(err => res.status(418).
+    send("Something went wrong! contact your local guy who wrote this"));
 });
 
 // redirect all else to index
