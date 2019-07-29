@@ -21,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/advill/the-dream-team-repo.git"
+    "url": "git+https://github.com/advill/Dream-Team-Scanner.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/advill/the-dream-team-repo/issues"
+    "url": "https://github.com/Advill/Dream-Team-Scanner"
   },
-  "homepage": "https://github.com/advill/the-dream-team-repo#readme"
+  "homepage": "https://github.com/Advill/Dream-Team-Scanner"
 }
